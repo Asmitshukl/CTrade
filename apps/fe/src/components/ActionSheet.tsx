@@ -8,7 +8,6 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-  SheetTrigger,
 } from "@/components/ui/sheet"
 
 import {
@@ -22,8 +21,7 @@ import {
 } from "@/components/ui/select"
 import { useState } from "react";
 import { Input } from "./ui/input";
-import type { TradingMetadata } from "@/nodes/Actions/Lighter";
-import { Supported_Assets } from "./TriggerSheet";
+import { Supported_Assets, type TradingMetadata } from "common/types";
 
 const Supported_Actions=[{
             id:"hyperliquid",
