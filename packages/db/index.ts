@@ -85,7 +85,7 @@ const NodesSchema=new Schema({
     description:{type:String,required:true},
     type:{
         type:String,
-        enum:["ACTION","TRIGGER"],
+        enum:["action","trigger"],
         required:true
     },
     credentialsType:[CredentialsTypeSchmea]
