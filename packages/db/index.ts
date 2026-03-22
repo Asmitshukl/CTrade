@@ -76,19 +76,34 @@ const WorkflowSchema= new Schema({
 
 const CredentialsTypeSchmea= new Schema({
     title:{type:String,required:true},
-    type:{type:String, required:true},
     required:{type:Boolean,required:true}
+},{
+    _id:false
+})
+
+const MetadataSchemaItemSchema= new Schema({
+    kind:{type:String,required:true},
+    title:{type:String,required:true},
+    description:{type:String},
+    values:[{type:String}]
+},{
+    _id:false
 })
 
 const NodesSchema=new Schema({
     title:{type : String, required:true},
     description:{type:String,required:true},
-    type:{
+    credentialsType:[CredentialsTypeSchmea],
+    metadataSchema:[MetadataSchemaItemSchema],
+    kind:{
         type:String,
-        enum:["action","trigger"],
+        enum:["ACTION","TRIGGER"],
         required:true
     },
-    credentialsType:[CredentialsTypeSchmea]
+    type:{
+        type:String,
+        required:true
+    }
 })
 
 const ExecutionSchema=new Schema({
