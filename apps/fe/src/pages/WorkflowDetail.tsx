@@ -29,9 +29,9 @@ const nodetypes = {
 export default function WorkflowDetail() {
   const { workflowId } = useParams<{ workflowId: string }>();
   const navigate = useNavigate();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const [nodes, setNodes] = useState<any[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const [edges, setEdges] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -50,19 +50,19 @@ export default function WorkflowDetail() {
   }, [workflowId]);
 
   const onNodesChange = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     (changes: any) =>
       setNodes((snapshot) => applyNodeChanges(changes, snapshot)),
     []
   );
   const onEdgesChange = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     (changes: any) =>
       setEdges((snapshot) => applyEdgeChanges(changes, snapshot)),
     []
   );
   const onConnect = useCallback(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     (params: any) => setEdges((snapshot) => addEdge(params, snapshot)),
     []
   );
@@ -72,7 +72,7 @@ export default function WorkflowDetail() {
     setSaving(true);
     try {
       const payload = {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        
       nodes: nodes.map((n: any) => ({
           id: n.id,
           nodeId: n.nodeId || n.id,

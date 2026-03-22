@@ -20,7 +20,7 @@ export const CreateWorkflowSchema=z.object({
         credentials:z.any(),
         id:z.string(),
         position:z.object({
-            x:z.number(),
+            x:z.number(), 
             y:z.number()
         })
     })),

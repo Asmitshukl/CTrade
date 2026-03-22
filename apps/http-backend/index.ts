@@ -4,10 +4,12 @@ import mongoose from "mongoose";
 import {CreateWorkflowSchema, Signinschema, Signupschema, UpdateWorkflowSchema} from "common/types"
 import  Jwt  from "jsonwebtoken";
 import { authmiddleware } from "./middleware";
+import cors from "cors"
 mongoose.connect(process.env.DATABASE_URL!);
 
 const app=express();
 app.use(express.json());
+app.use(cors());
 
 const JWT_SECRET  =process.env.JWT_SECRET!;
 
