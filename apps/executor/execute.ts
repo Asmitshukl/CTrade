@@ -1,5 +1,5 @@
 import {NodesModel} from "db/client"
-import { execute as executeLighter} from "./executors/lighter/lighter";
+import { execute as executeLighter } from "./executors/lighter";
 
 export type NodeDocument={
      id:string;
